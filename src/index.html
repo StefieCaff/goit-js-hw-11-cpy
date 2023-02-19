@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 11</title>
-</head>
-
-<body>
- 
-
-    <script src="./index.js" type="module"></script>
-</body>
-
+    <title>Page title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Exo+2:ital,wght@0,100;0,300;1,600&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    
+    <form class="search-form" id="search-form">
+      <input class="searchQuery" type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
+      <button type="submit">Search</button>
+    </form>
+    <div class="gallery">
+    <!-- Image cards -->
+    </div>
+    <button type="button" class="load-more">Load more</button>
+    
+    <script type="module" src="./index.js"></script>
+  </body>
 </html>
