@@ -1,1 +1,0 @@
-{"mappings":"ACAA,wBAIA","sources":["index.7113b391.css","src/css/styles.css"],"sourcesContent":["* {\n  box-sizing: border-box;\n}\n\nbody {\n  background-color: #678c67;\n}\n\n/*# sourceMappingURL=index.7113b391.css.map */\n","* {\n    box-sizing: border-box;\n}\n\nbody {\n    background-color: rgb(103, 140, 103);\n}"],"names":[],"version":3,"file":"index.7113b391.css.map"}
