@@ -3,10 +3,10 @@ import './css/styles.css';
 import renderGallery from './render-gallery';
 
 //------------------libraries------------------------------
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
-const axios = require('axios').default;
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+// import SimpleLightbox from "simplelightbox";
+// import "simplelightbox/dist/simple-lightbox.min.css";
+// const axios = require('axios').default;
 
 const userInput = document.querySelector('.searchQuery');
 const API_KEY = '33708941-9afad2bda68efbaf1594840f2';
@@ -27,4 +27,4 @@ const URL = "https://pixabay.com/api/?key=" + API_KEY + "&q=" + userInput + "&im
 //--------------initialize------------------------------
 
 //simple lightbox image library
-new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250, throttleInterval: 100 });
+//new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250, throttleInterval: 100 });
