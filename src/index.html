@@ -12,13 +12,19 @@
   <body>
     
     <form class="search-form" id="search-form">
-      <input class="searchQuery" type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
-      <button type="submit">Search</button>
+      <input id="search-query" type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
+      <button class="submit-btn" type="submit">Search</button>
     </form>
-    <div class="gallery">
+
+    <div id="card-container" class="gallery">
     <!-- Image cards -->
     </div>
-    <button type="button" class="load-more">Load more</button>
+    <div id="loader">
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+    <!--<button type="button" class="load-more">Load more</button> -->
     
     <script type="module" src="./index.js"></script>
   </body>
