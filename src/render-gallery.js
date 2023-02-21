@@ -18,7 +18,7 @@ export default renderGallery = images => {
 
       return (gallery.innerHTML =
         `
-          <div class="photo-card">
+          <div class="gallery-card">
             <a class="gallery__item" href="${largeImageURL}">
               <img class="gallery__image" src="${webformatURL}" alt="${tags}" loading="lazy" />
             </a>
