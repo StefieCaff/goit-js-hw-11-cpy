@@ -31,7 +31,7 @@ const form = document.querySelector('form');
 const handleSubmit = e => {
     e.preventDefault();
     let input = userInput.value.trim();
-
+    let response = '';
     if (input.value === "") {
         return;
     };

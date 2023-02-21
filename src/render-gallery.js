@@ -2,6 +2,7 @@ let renderGallery = '';
 export default renderGallery = images => {
 
   const gallery = document.querySelector('.gallery');
+  
   const markup = images
     .map((image) => {
   
@@ -14,6 +15,7 @@ export default renderGallery = images => {
         comments,
         downloads
       } = imgParams;
+
       return (gallery.innerHTML =
         `
           <div class="photo-card">
@@ -37,7 +39,7 @@ export default renderGallery = images => {
           </div>
 
         `
-      )
+      );
     })
     .join("");
   gallery.innerHTML = markup;

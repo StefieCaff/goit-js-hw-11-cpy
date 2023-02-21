@@ -3,28 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Homework 11</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Exo+2:ital,wght@0,100;0,300;1,600&display=swap"
       rel="stylesheet" />
   </head>
   <body>
-    
+  <!-- Input Form -->
     <form class="search-form" id="search-form">
       <input id="search-query" type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
       <button class="submit-btn" type="submit">Search</button>
     </form>
-
+ <!-- Image cards -->
     <div id="card-container" class="gallery">
-    <!-- Image cards -->
-    </div>
+<!-- Image cards loader and counter -->
+    <!-- </div>
     <div id="loader">
       <div class="skeleton-card"></div>
       <div class="skeleton-card"></div>
       <div class="skeleton-card"></div>
     </div>
-    <!--<button type="button" class="load-more">Load more</button> -->
+    <div class="card-actions">
+      <span>Showing
+        <span id="card-count"></span> of
+        <span id="card-total"></span> images
+      </span>
+    </div> -->
+    <button type="button" class="load-more">Load more</button>
     
     <script type="module" src="./index.js"></script>
   </body>
