@@ -14,7 +14,7 @@ export default renderGallery = images => {
         views,
         comments,
         downloads
-      } = imgParams;
+      } = image;
 
       return (gallery.innerHTML =
         `
