@@ -14,7 +14,7 @@ const userInput = document.querySelector('input#search-query');
 // const API_KEY = '33708941-9afad2bda68efbaf1594840f2';
 // const URL = "https://pixabay.com/api/?key=" + API_KEY + "&q=" + userInput.value + "&image_type=photo&orientation=horizontal&safesearch=true";
 const form = document.querySelector('form');
-
+const gallery = document.querySelector('.gallery');
 
 // //------------API request-------------------------
 // async function getImages() {
@@ -40,13 +40,19 @@ const handleSubmit = e => {
     return response = getImages(input);
 };
 
-
-
-
+function imageModal(e) {
+  e.preventDefault();
+    
+  if (e.target.nodeName !== `A`) {
+    return;
+  }
+};
 
 //--------------initialize/events----------------------------
 
 form.addEventListener('submit', handleSubmit);
 
 //simple lightbox image library
-new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250, throttleInterval: 100 });
+new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
+gallery.addEventListener("click", imageModal);
+
