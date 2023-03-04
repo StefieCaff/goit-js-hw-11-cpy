@@ -7,6 +7,22 @@
    font-family: 'Exo 2',
      sans-serif; */
 
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+ @media screen and (min-width:768px) {
+   .container {max-width: 768px;
+   }
+}
+
+ @media screen and (min-width: 1024px) {
+   .container {max-width: 1024px;
+   }
+}
+
 :root {
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --animation-duration: 250ms;
@@ -19,6 +35,7 @@
 body {
   margin: 0;
   font-family: 'Bungee Hairline', cursive;
+  font-weight: 300;
   font-size: 18px;
   width: 100vw;
   height: 100vh;
@@ -86,12 +103,14 @@ img {
   background-image: linear-gradient(180deg, rgba(84, 45, 85, 1) 0%, rgba(126, 102, 75, 1) 56%, rgba(114, 136, 150, 1) 100%);
   background-repeat: no-repeat;
   width: 100vw;
-  height: 105px;
-  margin-bottom: 30px;
+  padding: 50px;
+  margin-bottom: 15px;
 }
 
 button {
   color: whitesmoke;
+  font-family: 'Bungee Hairline', cursive;
+  font-size: 16px;
   background: linear-gradient(180deg, rgba(75, 0, 78, 1) 57%, rgba(121, 68, 9, 1) 89%, rgba(0, 134, 223, 0.9010197829131653) 100%);
   border-radius: 5px;
   border: rgba(255, 255, 255, 0.161) 1px solid;
@@ -99,14 +118,20 @@ button {
   padding: 7px 12px;
   margin: 5px;
   cursor: pointer;
-  transition: 0.7s;
+  transition-property: background;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button:hover {
+button:hover,
+button:focus {
   background: linear-gradient(180deg, rgba(84, 45, 85, 1) 0%, rgba(126, 102, 75, 1) 56%, rgba(114, 136, 150, 1) 100%);
 }
 
 input {
+  font-family: 'Bungee Hairline', cursive;
+  font-size: 16px;
+  font-weight: 600px;
   border-radius: 5px;
   border: rgba(255, 255, 255, 0.161) 1px solid;
   box-shadow: rgb(216, 225, 233) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
@@ -115,7 +140,12 @@ input {
   color: rgba(75, 0, 78, 1);
   margin: 5px;
   margin-right: 0px;
-  max-width: 160px;
+  max-width: 200px;
+}
+
+input::placeholder {
+  font-family: 'Bungee Hairline', cursive;
+  font-weight: 600;
 }
 
 .hidden {
@@ -127,20 +157,68 @@ input {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-left: -30px;
-  margin-top: -30px;
 }
 
-.gallery-card {
-  margin-left: 30px;
-    margin-top: 30px;
+.gallery-item {
+  margin: 0 10px 15px;
   background: whitesmoke;
   max-width: 300px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  transition-property: box-shadow, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+  .gallery-item {
+    width: 235px;
+    margin: 0 10px 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-item {
+    width: 237px;
+    margin: 0 12px 12px;
+  }
+}
+
+.gallery-item:hover,
+.gallery-item:focus {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 768px) {
+  .gallery-item:nth-child(2n + 1) {
+    margin-right: 0;
+  }
+}
+
+.gallery__image {
+  width: 310px;
+  height: 200px;
+  transform: translateY(5px);
+  padding: 0 5px;
 }
 
 .info {
   display:flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  padding: 5px;
+  transform: translateY(5px);
+}
+
+.info-item {
+  text-align: center;
+  font-size: 10px; 
+  padding: 5px;
+}
+
+b {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
 }
