@@ -94,18 +94,7 @@ img {
   margin: 0;
 }
 
-/*-----------main styling------------------------------*/
-
-.search-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(180deg, rgba(84, 45, 85, 1) 0%, rgba(126, 102, 75, 1) 56%, rgba(114, 136, 150, 1) 100%);
-  background-repeat: no-repeat;
-  width: 100vw;
-  padding: 50px;
-  margin-bottom: 15px;
-}
+/*-----------button styling------------------------------*/
 
 button {
   color: whitesmoke;
@@ -126,6 +115,29 @@ button {
 button:hover,
 button:focus {
   background: linear-gradient(180deg, rgba(84, 45, 85, 1) 0%, rgba(126, 102, 75, 1) 56%, rgba(114, 136, 150, 1) 100%);
+}
+
+.button-container{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.load-more {
+  margin: 30px
+
+}
+
+/* ---------------Form Styling-------------------- */
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(180deg, rgba(84, 45, 85, 1) 0%, rgba(126, 102, 75, 1) 56%, rgba(114, 136, 150, 1) 100%);
+  background-repeat: no-repeat;
+  width: 100vw;
+  padding: 50px;
+  margin-bottom: 30px;
 }
 
 input {

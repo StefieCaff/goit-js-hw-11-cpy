@@ -2,6 +2,7 @@
 import './css/styles.css';
 import getImages from './get-images';
 import renderGallery from './render-gallery';
+import './load-btn.js'
 
 //------------------libraries------------------------------
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
