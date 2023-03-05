@@ -7,7 +7,6 @@ function simpleLightbox() {
     const galleryHandler =  new SimpleLightbox('.gallery-card a', { captionsData: 'alt', captionDelay: 250 });
   galleryHandler.on('show.simplelightbox');
   galleryHandler.refresh();
-  console.log(test);
 };
 
 
