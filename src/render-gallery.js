@@ -1,4 +1,16 @@
 let renderGallery = '';
+import SimpleLightbox from "simplelightbox";
+
+//--------------simple lightbox image library----------------
+
+function simpleLightbox() {
+    const galleryHandler =  new SimpleLightbox('.gallery-card a', { captionsData: 'alt', captionDelay: 250 });
+  galleryHandler.on('show.simplelightbox');
+  galleryHandler.refresh();
+  console.log(test);
+};
+
+
 export default renderGallery = images => {
 
   const gallery = document.querySelector('.gallery');
@@ -40,4 +52,6 @@ export default renderGallery = images => {
     })
     .join("");
   gallery.innerHTML = markup;
+  simpleLightbox();
 };
+

@@ -150,8 +150,8 @@ input {
   padding: 7px;
   background-color: whitesmoke;
   color: rgba(75, 0, 78, 1);
-  margin: 5px;
-  margin-right: 0px;
+  margin-left: 0px;
+  margin-right: 10px;
   max-width: 200px;
 }
 

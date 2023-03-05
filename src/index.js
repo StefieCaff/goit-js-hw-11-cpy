@@ -5,11 +5,10 @@ import renderGallery from './render-gallery';
 import './load-btn.js'
 
 //------------------libraries------------------------------
+import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import SimpleLightbox from "simplelightbox";
 // Additional styles import
 import "simplelightbox/dist/simple-lightbox.min.css";
-import axios from 'axios';
 
 const userInput = document.querySelector('input#search-query');
 // const API_KEY = '33708941-9afad2bda68efbaf1594840f2';
@@ -41,21 +40,7 @@ const handleSubmit = e => {
     return response = getImages(input);
 };
 
-function imageLightbox(e) {
-  e.preventDefault();
-    
-  if (event.target.nodeName !== `A`) {
-    return;
-  }
-};
-
 //--------------initialize/events----------------------------
 
 form.addEventListener('submit', handleSubmit);
-
-
-
-//--------------simple lightbox image library----------------
- new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
-  gallery.addEventListener("click", imageLightbox());
 
