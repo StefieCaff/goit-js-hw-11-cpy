@@ -7,6 +7,7 @@ import './load-btn.js'
 //------------------libraries------------------------------
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from "simplelightbox";
+// Additional styles import
 import "simplelightbox/dist/simple-lightbox.min.css";
 import axios from 'axios';
 
@@ -14,7 +15,7 @@ const userInput = document.querySelector('input#search-query');
 // const API_KEY = '33708941-9afad2bda68efbaf1594840f2';
 // const URL = "https://pixabay.com/api/?key=" + API_KEY + "&q=" + userInput.value + "&image_type=photo&orientation=horizontal&safesearch=true";
 const form = document.querySelector('form');
-const gallery = document.querySelector('.gallery');
+let gallery = document.querySelector('.gallery');
 
 // //------------API request-------------------------
 // async function getImages() {
@@ -40,10 +41,10 @@ const handleSubmit = e => {
     return response = getImages(input);
 };
 
-function imageModal(e) {
+function imageLightbox(e) {
   e.preventDefault();
     
-  if (e.target.nodeName !== `A`) {
+  if (event.target.nodeName !== `A`) {
     return;
   }
 };
@@ -52,7 +53,9 @@ function imageModal(e) {
 
 form.addEventListener('submit', handleSubmit);
 
-//simple lightbox image library
-new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
-gallery.addEventListener("click", imageModal);
+
+
+//--------------simple lightbox image library----------------
+ new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
+  gallery.addEventListener("click", imageLightbox());
 

@@ -89,7 +89,7 @@ img {
 }
 
 .list {
-  list-style: none;
+  list-style-type: none;
   padding: 0; 
   margin: 0;
 }
@@ -124,7 +124,7 @@ button:focus {
 }
 
 .load-more {
-  margin: 30px
+  margin: 10px 0 30px 0;
 
 }
 
@@ -166,17 +166,18 @@ input::placeholder {
 
 /* ---------------gallery styling------------- */
 
-.gallery {
+.gallery-list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.gallery-item {
-  margin: 0 10px 15px;
-  background: whitesmoke;
+.gallery-card {
   max-width: 300px;
-  padding: 5px 5px 5px 5px;
-  border-radius: 2px;
+  background: whitesmoke;
+  border-radius: 3px;
+  border: .3px solid black;
+  padding: 0 5px 5px 5px;
+  margin-bottom: 20px;
   transition-property: box-shadow, transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -184,53 +185,68 @@ input::placeholder {
 }
 
 @media (min-width: 768px) {
-  .gallery-item {
-    width: 235px;
-    margin: 0 10px 15px;
+  .gallery-card {
+    width: 236px;
+    margin-left: 10px;
   }
 }
 
 @media (min-width: 1024px) {
-  .gallery-item {
-    width: 237px;
-    margin: 0 12px 12px;
+  .gallery-card {
+    width: 241px;
   }
 }
 
-.gallery-item:hover,
-.gallery-item:focus {
+.gallery-card:hover,
+.gallery-card:focus {
   transform: translateY(-5px);
   box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
+.gallery__image {
+  max-width: 290px;
+  height: 200px;
+  transform: translateY(5px);
+}
+
 @media (min-width: 768px) {
-  .gallery-item:nth-child(2n + 1) {
-    margin-right: 0;
+  .gallery__image {
+    width: 225px;
   }
 }
 
-.gallery__image {
-  width: 310px;
-  height: 200px;
-  transform: translateY(5px);
-  padding: 0 5px;
+@media (min-width: 1024px) {
+  .gallery__image {
+    width: 230px;
+  }
 }
 
 .info {
   display:flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 5px;
+  max-width: 300px;
+  padding: 7px 0px;
+  margin-bottom: 5px;
   transform: translateY(5px);
+  background: linear-gradient(180deg, rgba(84, 45, 85, 0.372) 0%, rgba(126, 102, 75, 0.535) 56%, rgba(114, 136, 150, 0.499) 100%);
+  box-shadow: inset 0 0 10px #6a1f6897;
 }
 
 .info-item {
   text-align: center;
-  font-size: 10px; 
-  padding: 5px;
+  line-height: 20px;
+  font-size: 12px; 
+}
+
+@media (min-width: 768px) {
+  .info-item {
+    font-size: 10px;
+  }
 }
 
 b {
   font-family: 'Exo 2', sans-serif;
   font-weight: 600;
+  padding: 5px;
 }
