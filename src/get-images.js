@@ -2,20 +2,18 @@ import axios from 'axios';
 import renderGallery from './render-gallery';
 import { Notify } from 'notiflix';
 
-const gallery = document.querySelector('.gallery');
-
 export default async function getImages() {
   let userInput = document.querySelector('input#search-query');
-  let pageNUm = 1;
+  let pageNum = 1;
   const API_KEY = '33708941-9afad2bda68efbaf1594840f2';
-  const URL = "https://pixabay.com/api/?key=" + API_KEY + "&q=" + userInput.value + "&image_type=photo&per_page=40&orientation=horizontal&safesearch=true?page=" + pageNUm + "
+  const URL = "https://pixabay.com/api/?key=" + API_KEY + "&q=" + userInput.value + "&image_type=photo&per_page=5&orientation=horizontal&safesearch=true&page=" + pageNum + "
   
     try {
       const response = await axios.get(URL);
       let images = response.data;
       console.log(images);
         if (images.total === 0) {
-            gallery.innerHTML = "";
+          gallery.innerHTML = "";
             Notify.info("Sorry, there are no images matching your search query. Please try again.");
             return;
         }
@@ -40,4 +38,3 @@ export default async function getImages() {
       Notify.failure(error.message);
     }
 };
-

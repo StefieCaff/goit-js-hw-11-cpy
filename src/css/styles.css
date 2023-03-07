@@ -94,6 +94,10 @@ img {
   margin: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 /*-----------button styling------------------------------*/
 
 button {
@@ -205,6 +209,7 @@ input::placeholder {
 
 .gallery__image {
   max-width: 290px;
+  width: 289.3px;
   height: 200px;
   transform: translateY(5px);
 }
