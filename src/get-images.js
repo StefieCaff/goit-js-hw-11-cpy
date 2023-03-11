@@ -2,11 +2,14 @@ import axios from 'axios';
 import renderGallery from './render-gallery';
 import { Notify } from 'notiflix';
 
-export default async function getImages() {
+  let limit = 5;
+  let totalPages = 500 / limit;
+  
+export default async function getImages(pageNum, totalPages) {
   let userInput = document.querySelector('input#search-query');
-  let pageNum = 1;
+  
   const API_KEY = '33708941-9afad2bda68efbaf1594840f2';
-  const URL = "https://pixabay.com/api/?key=" + API_KEY + "&q=" + userInput.value + "&image_type=photo&per_page=5&orientation=horizontal&safesearch=true&page=" + pageNum + "
+  const URL = "https://pixabay.com/api/?key=" + API_KEY + "&q=" + userInput.value + "&image_type=photo&per_page=" + limit + "&orientation=horizontal&safesearch=true&page=" + pageNum "
   
     try {
       const response = await axios.get(URL);
@@ -28,6 +31,7 @@ export default async function getImages() {
       
         if (response.status == 200) {
           renderGallery(images.hits);
+          pageNum += 1
           console.log(images.hits);
         }
      
@@ -38,3 +42,5 @@ export default async function getImages() {
       Notify.failure(error.message);
     }
 };
+
+

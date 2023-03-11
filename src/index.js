@@ -2,7 +2,7 @@
 import './css/styles.css';
 import getImages from './get-images';
 import renderGallery from './render-gallery';
-import { loadMore, hideBtn  } from './pagination';
+//import { pagination, hideBtn  } from './pagination';
 
 //------------------libraries------------------------------
 import axios from 'axios';
@@ -20,7 +20,7 @@ const loadBtn = document.querySelector('.load-more')
 
 const handleSubmit = e => {
     e.preventDefault();
-    let input = userInput.value.trim();
+    let input = userInput.value.trim().toLowerCase();
     let response = '';
     if (input.value === "") {
         return;
@@ -32,4 +32,4 @@ const handleSubmit = e => {
 //--------------initialize/events----------------------------
 
 form.addEventListener('submit', handleSubmit);
-loadBtn.addEventListener('click', loadMore);
+loadBtn.addEventListener('click', console.log('hommie'));
