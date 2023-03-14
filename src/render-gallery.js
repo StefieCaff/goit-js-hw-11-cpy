@@ -25,8 +25,6 @@ export default renderGallery = images => {
         views,
         comments,
         downloads,
-        hits,
-        totalHits
       } = image;
 
       return (gallery.innerHTML =

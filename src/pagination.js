@@ -1,11 +1,21 @@
-const loadContainer = document.querySelector('load-container')
+import getImages from "./get-images";
+import renderGallery from "./render-gallery";
+
+
+
+const limit = 40;
+//let totalPages = Math.floor(500 / limit);
 const loadBtn = document.querySelector('.load-more');
 
-const toggleHidden = (element) =>
-  element.classList.toggle('hidden') {
-
-}
-const hideBtn = () => loadBtn.classList.add('hidden');
+const hideBtn = () => loadBtn.classList.sdd('hidden');
 const showBtn = () => loadBtn.classList.remove('hidden');
 
-export { toggleHidden, hideBtn, showBtn };
+export { showImages, hideBtn, showBtn };
+
+const showImages = async () => {
+   const response = await getImages();
+ 
+   const gallery = await renderGallery(response)
+   page =+1
+    return gallery;
+}

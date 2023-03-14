@@ -3,7 +3,7 @@ import './css/styles.css';
 import getImages from './get-images';
 import renderGallery from './render-gallery';
 import { toggleLoadContainer  } from './pagination';
-
+import { showImages } from './pagination';
 //------------------libraries------------------------------
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -25,10 +25,10 @@ const handleSubmit = e => {
         return;
     };
     console.log(input);
-    return response = getImages(input);
+    return response = showImages(input);
 };
 
 //--------------initialize/events----------------------------
 
 form.addEventListener('submit', handleSubmit);
-//loadBtn.addEventListener('click', getImages);
+loadBtn.addEventListener('click', getImages);
