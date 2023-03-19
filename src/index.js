@@ -2,6 +2,7 @@
 import './css/styles.css';
 import getImages from './get-images';
 import renderGallery from './render-gallery';
+import { scrollFunction } from './page-up';
 
 let pageNum = 1;
 const limit = 40
@@ -28,23 +29,35 @@ const clearHTML = (element) => element.innerHTML = '';
 
 const handleSubmit = e => {
     e.preventDefault();
-    let input = userInput.value.trim().toLowerCase();
+    let input = e.target.value;
     //let response = '';
    
-    if (input.value === "") {
+    if (input == " ") {
         clearHTML(gallery);
         form.reset();
+        
         return;
     };
-    console.log(input);
+      console.log(input);
     
     return response = getImages(input);
+};
+
+const handleNewSearch = e => {
+    let input = e.target.value;
+    if (input == "") {
+        clearHTML(gallery);
+        form.reset();
+        hideBtn(loadBtn);
+        window.location.reload();
+        return;
+    };
 };
 
 //--------------initialize/events----------------------------
 
 form.addEventListener('submit', handleSubmit);
-//userInput.addEventListener('click', clearGallery);
+
 
 loadBtn.addEventListener('click', () => {
  
@@ -56,6 +69,6 @@ loadBtn.addEventListener('click', () => {
     }
 });
 
+form.addEventListener('input', handleNewSearch);
 
-
-// loadBtn.addEventListener('click', getImages);
+window.addEventListener('scroll', scrollFunction);

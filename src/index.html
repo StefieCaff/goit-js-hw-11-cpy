@@ -12,17 +12,17 @@
   <body>
     <!-- page-up-btn -->
     <div class="btn-up-wrapper">
-      <p class="btn-up-wrapper__text"></p>
-      <button aria-label="Up" class="btn-up-wrapper__btn btn-up-wrapper__text" type="button">Up
-        <svg class="btn-up-wrapper__icon" width="100" height="100">
-          <!-- <use href="./images/icons.svg#popcorn-bucket"></use> -->
+      <!-- <p class="btn-up-wrapper__text">UP</p> -->
+      <button aria-label="Up" class="btn-up-wrapper__btn button" type="button">UP
+        <svg class="btn-up-wrapper__icon" width="55" height="55">
+          <use href="./images/icons.svg#tetrahedron"></use>
         </svg>
       </button>
     </div>
   <!-- Input Form -->
     <form class="search-form" id="search-form">
       <input id="search-query" type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." pattern="([A-zÀ-ž\s]){1,}" required/>
-      <button class="submit-btn" type="submit">Search</button>
+      <button class="submit-btn button" type="submit">Search</button>
     </form>
  <!-- Image cards -->
     <div class="container">
@@ -32,7 +32,7 @@
     </div>
 <!-- Load More Button -->
     <div class="container button-container">
-      <button type="button" class="load-more hidden" title="load-more" aria-label="load-more">Load more</button>
+      <button type="button" class="load-more hidden button" title="load-more" aria-label="load-more">Load more</button>
     </div>
     <script type="module" src="./index.js"></script>
   </body>

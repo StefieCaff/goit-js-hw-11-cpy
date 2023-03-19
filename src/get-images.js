@@ -23,7 +23,10 @@ export default async function getImages() {
       if (images.hits.length === 0) {
         clearHTML(gallery);
         Notify.info('Sorry! There are no images to match your search. Try another.')
+        hideBtn(loadBtn);
         form.reset();
+        pageNum = 1;
+        window.location.reload();
         return;
       }
       
@@ -32,7 +35,6 @@ export default async function getImages() {
         console.log(images.hits);
         hideBtn(loadBtn);
         Notify.success(`Woot! Maximum search values found! We have ${images.hits.length} images.`)
-        form.reset();
         pageNum = 1;
         return;
       }
