@@ -30,7 +30,7 @@ const clearHTML = (element) => element.innerHTML = '';
 const handleSubmit = e => {
     e.preventDefault();
     let input = e.target.value;
-    //let response = '';
+    let response = '';
    
     if (input == " ") {
         clearHTML(gallery);
@@ -38,9 +38,9 @@ const handleSubmit = e => {
         
         return;
     };
-      console.log(input);
-    
-    return response = getImages(input);
+
+      response = getImages(input);
+      return response;
 };
 
 const handleNewSearch = e => {
