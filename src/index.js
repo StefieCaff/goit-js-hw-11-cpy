@@ -29,9 +29,11 @@ const clearHTML = (element) => element.innerHTML = '';
 const handleSubmit = e => {
     e.preventDefault();
     let input = userInput.value.trim().toLowerCase();
-    let response = '';
+    //let response = '';
+   
     if (input.value === "") {
         clearHTML(gallery);
+        form.reset();
         return;
     };
     console.log(input);
