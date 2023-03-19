@@ -1,4 +1,4 @@
-// let renderGallery = '';
+let renderGallery = '';
 import SimpleLightbox from "simplelightbox";
 
 //--------------simple lightbox image library----------------
