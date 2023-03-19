@@ -25,10 +25,11 @@ export default renderGallery = images => {
         views,
         comments,
         downloads,
+        hits,
+        totalhits
       } = image;
 
-      return (gallery.innerHTML =
-        `<div class="gallery-card">
+      return `<li class="gallery-card">
           <a class="link" href="${largeImageURL}">
             <img class="gallery__image" src="${webformatURL}" alt="${tags}" loading="lazy"/>
           </a>
@@ -46,10 +47,9 @@ export default renderGallery = images => {
               <b>Downloads</b> ${downloads}
             </p>
           </div>
-        </div>`
-      );
+        </li>`
     })
     .join("");
-  gallery.innerHTML = markup;
+   gallery.insertAdjacentHTML("beforeend", markup);
   simpleLightbox();
 };
