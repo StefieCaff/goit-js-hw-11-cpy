@@ -21,32 +21,31 @@ const loadBtn = document.querySelector('.load-more');
 const gallery = document.querySelector('.gallery-list');
 //-----------helper functions---------------------
 
-const hideBtn = () => loadBtn.classList.add('hidden');
-const showBtn = () => loadBtn.classList.remove('hidden');
+const hideBtn = (element) => element.classList.add('hidden');
+const showBtn = (element) => element.classList.remove('hidden');
 
+const clearHTML = (element) => element.innerHTML = '';
 
 const handleSubmit = e => {
     e.preventDefault();
     let input = userInput.value.trim().toLowerCase();
     let response = '';
     if (input.value === "") {
-        gallery.innerHTML = '';
+        clearHTML(gallery);
         return;
     };
     console.log(input);
     
-    return response = getImages(input);    
+    return response = getImages(input);
 };
 
 //--------------initialize/events----------------------------
 
 form.addEventListener('submit', handleSubmit);
+//userInput.addEventListener('click', clearGallery);
 
 loadBtn.addEventListener('click', () => {
-    if (pageNum > totalPages) {
-        hideBtn();
-        Notify.info('Yay! You have reached the page limit!')
-  }
+ 
     try {
         getImages();
     }
