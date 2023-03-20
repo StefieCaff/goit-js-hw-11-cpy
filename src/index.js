@@ -21,6 +21,7 @@ const userInput = document.querySelector('input#search-query');
 const loadBtn = document.querySelector('.load-more');
 const gallery = document.querySelector('.gallery-list');
 const searchBtn = document.querySelector('button#search-btn');
+
 //-----------helper functions---------------------
 
 const hideBtn = (element) => element.classList.add('hidden');
@@ -52,9 +53,18 @@ const handleSubmit = e => {
 };
 
 const handleNewSearch = () => {
-    clearHTML(gallery);
-    hideBtn(loadBtn);
-    searchBtn.disabled = false;
+    input = userInput.value.trim().toLowerCase();
+    console.log(input);
+    if (input) {
+        pageNum = 1
+        clearHTML(gallery);
+        hideBtn(loadBtn);
+        searchBtn.disabled = false;
+    }
+
+  else {
+      return;
+    }
 };
 
 //--------------initialize/events----------------------------
@@ -72,3 +82,22 @@ loadBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('scroll', scrollFunction);
+
+
+
+
+
+// const handleNewSearch = () => {
+//     input = userInput.value.trim().toLowerCase();
+//     console.log(input);
+//   if (input) {
+//     pageNum =1
+//     clearHTML(gallery);
+//     hideBtn(loadBtn);
+//     searchBtn.disabled = false;
+//     form.addEventListener('submit', handleSubmit);
+//   }
+//   else {
+//       return;
+//     }
+// };

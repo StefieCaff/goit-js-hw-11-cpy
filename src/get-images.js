@@ -10,6 +10,7 @@ const form = document.querySelector('.search-form')
 // let userInput = document.querySelector('input#search-query');
 
 export default async function getImages() {
+  
   let userInput = document.querySelector('input#search-query');
   const API_KEY = '33708941-9afad2bda68efbaf1594840f2';
   const URL = `https://pixabay.com/api/?key=${ API_KEY }&q=${ userInput.value }&image_type=photo&per_page=${ limit }&orientation=horizontal&safesearch=true&page=${ pageNum }`
@@ -18,7 +19,7 @@ export default async function getImages() {
       const response = await axios.get(URL);
       let images = response.data;
       pageNum += 1
-      const limit = 40;
+      
       console.log(images);
 
       if (images.hits.length === 0) {
