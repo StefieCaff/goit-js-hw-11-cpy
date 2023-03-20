@@ -24,9 +24,7 @@ export default renderGallery = images => {
         likes,
         views,
         comments,
-        downloads,
-        hits,
-        totalhits
+        downloads
       } = image;
 
       return `<li class="gallery-card">

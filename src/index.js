@@ -20,6 +20,7 @@ const form = document.querySelector('.search-form')
 const userInput = document.querySelector('input#search-query');
 const loadBtn = document.querySelector('.load-more');
 const gallery = document.querySelector('.gallery-list');
+const searchBtn = document.querySelector('button#search-btn');
 //-----------helper functions---------------------
 
 const hideBtn = (element) => element.classList.add('hidden');
@@ -29,35 +30,36 @@ const clearHTML = (element) => element.innerHTML = '';
 
 const handleSubmit = e => {
     e.preventDefault();
-    let input = e.target.value;
+    pageNum = 1;
+    clearHTML(gallery);
+    let input = userInput.value.trim().toLowerCase();
     let response = '';
    
-    if (input == " ") {
-        clearHTML(gallery);
-        form.reset();
-        
-        return;
-    };
-
-      response = getImages(input);
-      return response;
-};
-
-const handleNewSearch = e => {
-    let input = e.target.value;
     if (input == "") {
         clearHTML(gallery);
         form.reset();
-        hideBtn(loadBtn);
         window.location.reload();
         return;
-    };
+    }
+    else {
+        clearHTML(gallery);
+        console.log(input);
+        response = getImages(input);
+        searchBtn.disabled = true;
+        userInput.addEventListener('focus', handleNewSearch);
+        return response;
+    }
+};
+
+const handleNewSearch = () => {
+    clearHTML(gallery);
+    hideBtn(loadBtn);
+    searchBtn.disabled = false;
 };
 
 //--------------initialize/events----------------------------
 
 form.addEventListener('submit', handleSubmit);
-
 
 loadBtn.addEventListener('click', () => {
  
@@ -68,7 +70,5 @@ loadBtn.addEventListener('click', () => {
       Notify.failure('Oops, that request did not work, try another search.')
     }
 });
-
-form.addEventListener('input', handleNewSearch);
 
 window.addEventListener('scroll', scrollFunction);
