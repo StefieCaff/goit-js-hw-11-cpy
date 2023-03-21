@@ -5,11 +5,11 @@ import renderGallery from './render-gallery';
 import { scrollFunction } from './page-up';
 
 let pageNum = 1;
-const limit = 40
-const totalPages = Math.floor(500 / limit);
+// const limit = 40
+// const totalPages = Math.floor(500 / limit);
 
 //------------------libraries------------------------------
-import axios from 'axios';
+//import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 // Additional styles import
@@ -25,79 +25,68 @@ const searchBtn = document.querySelector('button#search-btn');
 //-----------helper functions---------------------
 
 const hideBtn = (element) => element.classList.add('hidden');
-const showBtn = (element) => element.classList.remove('hidden');
-
 const clearHTML = (element) => element.innerHTML = '';
 
+/* on submit clear gallery, set page to 1, make new api call if input,
+   deactivate search button --if empty reload */
 const handleSubmit = e => {
     e.preventDefault();
-    pageNum = 1;
+    let pageNum = 1;
     clearHTML(gallery);
-    let input = userInput.value.trim().toLowerCase();
+    const input = e.target.elements.searchQuery.value.trim().toLowerCase();
     let response = '';
    
     if (input == "") {
-        clearHTML(gallery);
-        form.reset();
         window.location.reload();
         return;
     }
-    else {
+    else if (input) {
         clearHTML(gallery);
         console.log(input);
-        response = getImages(input);
+        response = getImages(input, pageNum);
         searchBtn.disabled = true;
         userInput.addEventListener('focus', handleNewSearch);
         return response;
     }
 };
 
+// when search box gets focus clear gallery, hide load button, enable search button
 const handleNewSearch = () => {
     input = userInput.value.trim().toLowerCase();
     console.log(input);
     if (input) {
-        pageNum = 1
         clearHTML(gallery);
         hideBtn(loadBtn);
         searchBtn.disabled = false;
+        pageNum = 1;
     }
 
   else {
       return;
     }
 };
+// handle more images increment page number and call api
+const loadMore = () => {
+    input = userInput.value.trim().toLowerCase();
+    pageNum += 1;
+      if (input) {
+        try {
+            console.log(input);
+            console.log(pageNum);
+        getImages(input, pageNum);
+        
+      }
+      
+      catch (error) {
+        Notify.failure('Oops, that request did not work, try another search. poopay')
+      }
+    }
+}
 
 //--------------initialize/events----------------------------
 
 form.addEventListener('submit', handleSubmit);
 
-loadBtn.addEventListener('click', () => {
- 
-    try {
-        getImages();
-    }
-    catch (error) {
-      Notify.failure('Oops, that request did not work, try another search.')
-    }
-});
-
 window.addEventListener('scroll', scrollFunction);
 
-
-
-
-
-// const handleNewSearch = () => {
-//     input = userInput.value.trim().toLowerCase();
-//     console.log(input);
-//   if (input) {
-//     pageNum =1
-//     clearHTML(gallery);
-//     hideBtn(loadBtn);
-//     searchBtn.disabled = false;
-//     form.addEventListener('submit', handleSubmit);
-//   }
-//   else {
-//       return;
-//     }
-// };
+loadBtn.addEventListener('click', loadMore)
