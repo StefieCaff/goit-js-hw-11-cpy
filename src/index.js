@@ -50,7 +50,8 @@ const handleSubmit = e => {
     }
 };
 
-// when search box gets focus clear gallery, hide load button, enable search button
+/* when search box gets focus clear gallery, hide load button, enable search button
+  reset pageNum to 1*/
 const handleNewSearch = () => {
     input = userInput.value.trim().toLowerCase();
     console.log(input);
@@ -78,7 +79,7 @@ const loadMore = () => {
       }
       
       catch (error) {
-        Notify.failure('Oops, that request did not work, try another search. poopay')
+        Notify.failure('Oops, that request did not work, try another search.')
       }
     }
 }
