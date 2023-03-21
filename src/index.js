@@ -5,8 +5,6 @@ import renderGallery from './render-gallery';
 import { scrollFunction } from './page-up';
 
 let pageNum = 1;
-// const limit = 40
-// const totalPages = Math.floor(500 / limit);
 
 //------------------libraries------------------------------
 //import axios from 'axios';
@@ -28,7 +26,8 @@ const hideBtn = (element) => element.classList.add('hidden');
 const clearHTML = (element) => element.innerHTML = '';
 
 /* on submit clear gallery, set page to 1, make new api call if input,
-   deactivate search button --if empty reload */
+   deactivate search button --if empty reload  add event listener for reactivating 
+   search button as well as handling input change/or not*/
 const handleSubmit = e => {
     e.preventDefault();
     let pageNum = 1;
