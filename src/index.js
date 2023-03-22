@@ -32,7 +32,7 @@ const handleSubmit = e => {
     e.preventDefault();
     let pageNum = 1;
     clearHTML(gallery);
-    const input = e.target.elements.searchQuery.value.trim().toLowerCase();
+    let input = e.target.elements.searchQuery.value.trim().toLowerCase();
     let response = '';
    
     if (input == "") {
