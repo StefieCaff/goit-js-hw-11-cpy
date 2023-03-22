@@ -52,7 +52,7 @@ const handleSubmit = e => {
 /* when search box gets focus clear gallery, hide load button, enable search button
   reset pageNum to 1*/
 const handleNewSearch = () => {
-    input = userInput.value.trim().toLowerCase();
+    let input = userInput.value.trim().toLowerCase();
     console.log(input);
     if (input) {
         clearHTML(gallery);
@@ -67,7 +67,7 @@ const handleNewSearch = () => {
 };
 // handle more images increment page number and call api
 const loadMore = () => {
-    input = userInput.value.trim().toLowerCase();
+    let input = userInput.value.trim().toLowerCase();
     pageNum += 1;
       if (input) {
         try {
