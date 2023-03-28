@@ -95,12 +95,14 @@ ul {
   margin: 0;
 }
 
-.hidden {
-  display: none;
+b {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+  padding: 5px;
 }
 
-.disabled {
-
+.hidden {
+  display: none;
 }
 /*-----------button styling------------------------------*/
 
@@ -299,12 +301,6 @@ input::placeholder {
   .info-item {
     font-size: 10px;
   }
-}
-
-b {
-  font-family: 'Exo 2', sans-serif;
-  font-weight: 600;
-  padding: 5px;
 }
 
 .disabled {

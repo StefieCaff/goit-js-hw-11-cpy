@@ -44,7 +44,8 @@ const handleSubmit = e => {
         console.log(input);
         response = getImages(input, pageNum);
         searchBtn.disabled = true;
-        userInput.addEventListener('focus', handleNewSearch);
+        searchBtn.classList.add('disabled');
+        userInput.addEventListener('input', handleNewSearch);
         return response;
     }
 };
@@ -58,6 +59,7 @@ const handleNewSearch = () => {
         clearHTML(gallery);
         hideBtn(loadBtn);
         searchBtn.disabled = false;
+        searchBtn.classList.remove('disabled');
         pageNum = 1;
     }
 
