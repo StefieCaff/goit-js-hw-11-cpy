@@ -13,7 +13,6 @@ export default async function getImages(name, pageNum) {
     try {
       const response = await axios.get(URL);
       let images = response.data;    
-      console.log(images);
 
       if (images.hits.length === 0) {
         clearHTML(gallery);
@@ -25,30 +24,24 @@ export default async function getImages(name, pageNum) {
       
       if (images.hits.length < 40) {
         renderGallery(images.hits);
-        console.log(images.hits);
         hideBtn(loadBtn);
         Notify.success(`Woot! Maximum search values found! We have ${images.hits.length} images.`);
         return;
       }
       
       if (pageNum >= 2 && pageNum <= 12) {
-        console.log(pageNum);
         renderGallery(images.hits);
-        console.log(images.hits);
         showBtn(loadBtn);
         return;
       }
 
       if (pageNum === 13) {
-        console.log(pageNum);
         renderGallery(images.hits.slice(20));
         hideBtn(loadBtn);
       }
 
       else if (images.totalHits > 40) {
-        console.log(pageNum);
         renderGallery(images.hits);
-        console.log(images.hits);
         showBtn(loadBtn);
         Notify.success(`Hooray! We found ${images.totalHits} images.`);
         return;

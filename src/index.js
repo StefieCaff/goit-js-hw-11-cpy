@@ -41,7 +41,6 @@ const handleSubmit = e => {
     }
     else if (input) {
         clearHTML(gallery);
-        console.log(input);
         response = getImages(input, pageNum);
         searchBtn.disabled = true;
         searchBtn.classList.add('disabled');
@@ -54,7 +53,6 @@ const handleSubmit = e => {
   reset pageNum to 1*/
 const handleNewSearch = () => {
     let input = userInput.value.trim().toLowerCase();
-    console.log(input);
     if (input) {
         clearHTML(gallery);
         hideBtn(loadBtn);
@@ -73,8 +71,6 @@ const loadMore = () => {
     pageNum += 1;
       if (input) {
         try {
-            console.log(input);
-            console.log(pageNum);
         getImages(input, pageNum);
         
       }
